@@ -6,23 +6,29 @@
     <script src="qrcode.js"></script>
     <style>
         .wx{
-            font-size: 30px;
+            font-size: 50px;
             color: red;
-            padding-left:25%;
+            padding-left:50%;
         }
         img{
-          width: 45%;
-          height: 45%;
+          width: 30%;
+          height: 30%;
         }
         
         .divbutton{
           padding-left:30%;
         }
         .font{
-          padding-left:10%;
+          padding-left:30%;
           font-size: 200%;
           color: crimson;
           background-color: beige;
+        }
+        .font1{
+          padding-left:30%;
+          font-size: 230%;
+          color: red;
+          background-color: white;
         }
     </style>
 </head>
@@ -30,9 +36,15 @@
 <div class="divbutton">
     <button><a id="login" href="#" ><h1>在外部浏览器点击登录跳转XX强国app</h1></a></button>
 </div>
-<div id="wx" class="wx"></div>
+<div class="font1">
+  <p>警告！！！！！！</p>
+  <p>
+    现在陆续出现被使用本服务被强国警告的用户，如果发现自己被警告，请慎用本服务
+  </p>
+</div>
 <div id="qrcode" style="margin-top: 30px;
- padding-left:10%;">
+ padding-left:35%;">
+ <img src="https://photo.ytools.cc/hRFZoe.png" alt="警告">
     <img id="img" src="#"  alt="#"/>
     <img src="./bgm.jpg" alt="宝可梦">
 </div>
@@ -41,10 +53,8 @@
   <p>
     如果出现故障请及时联系管理员。
   </p>
-  <p>
-    学习期间不要频繁点击APP，会导致IP地址连续切换，出现封号风险。
-  </p>
 </div>
+
 </body>
 <script>
     function load() {
