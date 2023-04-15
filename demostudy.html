@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请在内置浏览器打开此页面</title>
+    <script src="qrcode.js"></script>
+    <style>
+        .wx{
+            font-size: 50px;
+            color: red;
+            padding-left:50%;
+        }
+        img{
+          width: 30%;
+          height: 30%;
+        }
+        
+        .divbutton{
+          padding-left:30%;
+        }
+        .font{
+          padding-left:30%;
+          font-size: 200%;
+          color: crimson;
+          background-color: beige;
+        }
+        .font1{
+          padding-left:30%;
+          font-size: 230%;
+          color: red;
+          background-color: white;
+        }
+        .jg{
+          font-size: 250%;
+          color: blue;
+          background-color: white;
+          margin-top: 30px;
+          padding-left:35%;
+          width: 100%;
+          height: 80%;
+        }
+    </style>
+</head>
+<body >
+<div class="divbutton">
+    <button><a id="login" href="#" ><h1>在外部浏览器点击登录跳转XX强国app</h1></a></button>
+</div>
+<div class="font1">
+  <p>🚫🚫🚫警告🚫🚫🚫</p>
+  <p>
+    目前陆续出现被使用本服务被强国警告的用户，如果发现自己被警告，请慎用本服务！！！
+  </p>
+</div>
+<div class="jg">
+  <p>
+    有些通知会在群里发布，如果需要进来的，扫码进来即可
+  </p>
+  <img src="./wxq.jpg" alt="警告">
+</div>
+<div id="qrcode" style="margin-top: 30px;
+ padding-left:35%;">
+    <img id="img" src="#"  alt="#"/>
+    <img src="./bgm.jpg" alt="宝可梦">
+</div>
+<div class="font">
+  <p>严禁出现商业行为，一经发现限制登录，仅供学习交流使用，该项目随时关停。</p>
+  <p>
+    如果出现故障请及时联系管理员。
+  </p>
+</div>
+<div class="jg">
+  <img src="./qgjg.png" alt="警告">
+</div>
+</body>
+<script>
+    function load() {
+        if (isWechat()){
+            document.getElementById("wx").innerText = "当前为微信环境，请点击右上角在浏览器中打开"
+        }
+        let search = window.location.search
+        search = search.substring(1,search.length)
+        document.getElementById("login").setAttribute("href","dtxuexi://appclient/page/study_feeds?url="+search)
+        console.log(unescape(search))
+        let imgBase64 = jrQrcode.getQrBase64(unescape(search), {});
+        document.getElementById("img").setAttribute("src",imgBase64)
+        document.getElementById("login").click()
+    }
+    function isWechat() {
+        return /MicroMessenger/i.test(window.navigator.userAgent);
+    }
+    load()
+
+</script>
+</html>
